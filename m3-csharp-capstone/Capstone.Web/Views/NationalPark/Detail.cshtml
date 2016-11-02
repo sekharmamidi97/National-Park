@@ -1,0 +1,54 @@
+﻿@model Capstone.Web.Models.NationalParkModel
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detail</h2>
+
+<p>@Model.ParkName</p>
+<p>@Model.State</p>
+<p>@Model.YearFounded</p>
+<img src=@("/Content/" + Model.ParkCode + ".jpg") /><br />
+@Html.ActionLink("Get 5 Day Forecast", "Forecast", "Weather", new { parkCode = Model.ParkCode }, null)
+<p>@Model.Description</p>
+<table>
+    <tr>
+        <td>Elevation:</td>
+        <td>@Model.ElevationInFeet</td>
+    </tr>
+    <tr>
+        <td>Acreage:</td>
+        <td>@Model.Acreage</td>
+    </tr>
+    <tr>
+        <td>Number of Trails:</td>
+        <td>@Model.MilesOfTrail</td>
+    </tr>
+    <tr>
+        <td>Number of Animals:</td>
+        <td>@Model.NumberOfAnimalSpecies</td>
+    </tr>
+    <tr>
+        <td>Number of Campsites:</td>
+        <td>@Model.NumberOfCampsites</td>
+    </tr>
+    <tr>
+        <td>Climate:</td>
+        <td>@Model.Climate</td>
+    </tr>
+    <tr>
+        <td>Annual Vistor Count:</td>
+        <td>@Model.AnnualVisitorCount</td>
+    </tr>
+    <tr>
+        <td>Entry Fee:</td>
+        <td>@Model.EntryFee</td>
+    </tr>
+</table>
+<div>
+    <p>@Model.Quote</p>
+    <p>@Model.QuoteSource</p>
+</div>
+
+

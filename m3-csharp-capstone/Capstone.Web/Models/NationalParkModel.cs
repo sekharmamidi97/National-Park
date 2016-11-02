@@ -7,7 +7,7 @@ namespace Capstone.Web.Models
 {
     public class NationalParkModel
     {
-        public int ParkCode { get; set; }
+        public string ParkCode { get; set; }
         public string ParkName { get; set; }
         public string State { get; set; }
         public int Acreage { get; set; }
@@ -20,7 +20,7 @@ namespace Capstone.Web.Models
         public string Quote { get; set; }
         public string QuoteSource { get; set; }
         public string Description { get; set; }
-        public int EntryFee { get; set; }
+        public decimal EntryFee { get; set; }
         public int NumberOfAnimalSpecies { get; set; }
     }
 }

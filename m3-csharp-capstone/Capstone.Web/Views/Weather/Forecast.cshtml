@@ -1,0 +1,22 @@
+﻿@model List<Capstone.Web.Models.ParkWeatherModel>
+@{
+    ViewBag.Title = "Forecast";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Weather Forecast</h2>
+<section>
+    @foreach (var weather in Model)
+    {
+        <h1>@weather.parkName[weather.ParkCode]</h1>
+        <h1>Today</h1>
+        <div>
+            <img src=@("/Content/" + weather.Forecast + ".png") />
+            <p>@weather.outlook[weather.Forecast]</p>
+            <p>High @weather.High &#8457 / Low @weather.Low &#8457</p>
+            
+
+        </div>
+
+    }
+</section>

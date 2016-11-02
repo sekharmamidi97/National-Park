@@ -9,7 +9,7 @@ namespace Capstone.Web.DAL
 {
     public interface IWeatherDAL
     {
-        List<ParkWeatherModel> GetAllWeather();
-        bool SaveWeather(ParkWeatherModel weatherInformation);
+        List<ParkWeatherModel> GetAllWeather(string parkCode);
+        
     }
 }

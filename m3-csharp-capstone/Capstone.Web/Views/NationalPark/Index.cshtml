@@ -1,0 +1,16 @@
+﻿@model List<Capstone.Web.Models.NationalParkModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@foreach (var park in Model)
+{
+    <p>@park.ParkName</p>
+    <p>@park.State</p>
+    <a href=@Url.Action("Detail", "NationalPark", new { parkCode = park.ParkCode})>
+        <img src=@("/Content/" + park.ParkCode + ".jpg") /></a>
+    <p>@park.Description</p>
+}
+
+
