@@ -19,7 +19,7 @@
 }
 
 header{
-    height: 10%;
+    height: auto;
     width: 90%;
     background-color: white;
     border: solid;
@@ -27,6 +27,7 @@ header{
     border-radius: 1em;
     margin-left: 5%;
     z-index: 4;
+    opacity: 0.95;
     
 }
 
@@ -40,7 +41,6 @@ nav{
     border-radius: 1em;
     z-index: 3;
     position: fixed;
-    
     
 }
 
@@ -64,11 +64,9 @@ nav a:hover{
 }
 
 header img{
+    margin-top: 3em;
     width: 70%;
     height: auto;
-}
-
-.picture{
     opacity: 1;
 }
 
@@ -86,27 +84,48 @@ section{
 }
 
 .right-content div{
-    margin-left: 15px;
+    margin-left: 1em;
     display: inline-block;
-    width: 50%;
+    width: 35%;
+    vertical-align: top;
+    
+    
 }
 
 .right-summary{
     display: inline-block;
-    width: 50%;
+    width: 60%;
+    vertical-align: top;
+    margin-left: 1em;
+    line-height: 1.5em;
+    font-size: 1.25em;
 }
 
 .left-content div{
-    margin-right: 15px;
+    margin-left: 1.5em;
     display: inline-block;
+    width: 35%;
 }
 
 .left-summary{
     display: inline-block;
-    width: 50%;
+    width: 60%;
+    vertical-align: top;
+    margin-right: 1em;
+    line-height: 1.5em;
+    font-size: 1.25em;
 }
 
-.picture{
-    margin-bottom: 15px;
-    box-shadow: 10px 10px 5px #888888;
+.right-content .picture{
+    width: 75%;
+    opacity: 1;
+    margin-bottom: 3em;
+    box-shadow: 1em 1em 0.5em #888888;
+}
+
+.left-content .picture{
+    width: 75%;
+    opacity: 1;
+    margin-bottom: 3em;
+    box-shadow: -1em 1em 0.5em #888888;
 }

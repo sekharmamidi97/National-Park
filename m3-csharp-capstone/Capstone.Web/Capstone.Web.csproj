@@ -148,6 +148,7 @@
     </Compile>
     <Compile Include="Models\NationalParkModel.cs" />
     <Compile Include="Models\ParkWeatherModel.cs" />
+    <Compile Include="Models\RandomBackgroundGenerator.cs" />
     <Compile Include="Models\SurveyModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

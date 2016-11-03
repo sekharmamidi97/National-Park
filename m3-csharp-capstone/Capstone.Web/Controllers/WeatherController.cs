@@ -25,15 +25,15 @@ namespace Capstone.Web.Controllers
             List<ParkWeatherModel> model = weatherDAL.GetAllWeather(parkCode);
             foreach(var temperature in model)
             {
-                temperature.TemperatureType = Session_Temperature;
+                temperature.TemperatureType = Convert.ToString(Session[Session_Temperature]);
             }
             return View("Forecast", model);
         }
         [HttpPost]
-        public ActionResult TemperatureConversion(string temp)
+        public ActionResult TemperatureConversion(string temp, string parkCode)
         {
             Session[Session_Temperature] = temp;
-            return RedirectToAction("Forecast");
+            return RedirectToAction("Forecast", new { parkCode = parkCode });
         }
     }
 }

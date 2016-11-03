@@ -5,10 +5,12 @@
 }
 
 <section>
-    @using (Html.BeginForm("TemperatureConversion", "Weather", FormMethod.Post))
+    @using (Html.BeginForm("TemperatureConversion", "Weather",  FormMethod.Post))
     {
-        <p>Fahrenheit @Html.RadioButton("Session_Temperature", "Fahrenheit (F)")</p>
-        <p>Celsius @Html.RadioButton("Session_Temperature", "Celsius (C)")</p>
+        
+        <p>Fahrenheit @Html.RadioButton("temp", "Fahrenheit (F)")</p>
+        <p>Celsius @Html.RadioButton("temp", "Celsius (C)")</p>
+        <input type="hidden" name="parkCode" value="@Model[0].ParkCode"/>
         <button>Submit</button>
     }
 
@@ -19,7 +21,7 @@
             <div>
                 <img src=@("/Content/" + weather.Forecast + ".png") />
                 <p>@weather.outlook[weather.Forecast]</p>
-                <p>High @weather.CalculateCelsius(weather.High) &#8457 / Low @weather.CalculateCelsius(weather.Low) &#8457</p>
+                <p>High @weather.CalculateCelsius(weather.High) @weather.Unit() / Low @weather.CalculateCelsius(weather.Low) @weather.Unit()</p>
                 <p>@weather.WeatherGear()</p>
             </div>
     }

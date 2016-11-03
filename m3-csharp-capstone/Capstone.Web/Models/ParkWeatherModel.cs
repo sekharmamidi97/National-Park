@@ -13,7 +13,15 @@ namespace Capstone.Web.Models
         public int High { get; set; }
         public string Forecast { get; set; }
         public string TemperatureType { get; set; }
-        
+
+        public string Unit()
+        {
+            if(TemperatureType == "Celsius (C)")
+            {
+                return "C";
+            }
+            return "F";
+        }
 
         public Dictionary<string, string> outlook = new Dictionary<string, string>()
         {
