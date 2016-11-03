@@ -12,6 +12,8 @@ namespace Capstone.Web.Models
         public int Low { get; set; }
         public int High { get; set; }
         public string Forecast { get; set; }
+        public string TemperatureType { get; set; }
+        
 
         public Dictionary<string, string> outlook = new Dictionary<string, string>()
         {
@@ -73,36 +75,45 @@ namespace Capstone.Web.Models
         {
             string s = "";
 
-            if(Forecast == "snow")
+            if (Forecast == "snow")
             {
                 s = s + "Pack snow shoes. ";
             }
-            if(Forecast == "rain")
+            if (Forecast == "rain")
             {
                 s = s + "Pack rain gear, with waterproof shoes. ";
             }
-            if(Forecast == "thunderstorms")
+            if (Forecast == "thunderstorms")
             {
                 s = s + "Seek shelter, don't hike on exposed ridges. ";
             }
-            if(Forecast == "sunny")
+            if (Forecast == "sunny")
             {
                 s = s + "Pack sun block. ";
             }
-            if(High > 75)
+            if (High > 75)
             {
                 s = s + "Bring an extra gallon of water. ";
             }
-            if(High - Low > 20)
+            if (High - Low > 20)
             {
                 s = s + "Wear breathable layers. ";
             }
-            if(Low < 20)
+            if (Low < 20)
             {
                 s = s + "Being exposed to frigid temperatures can be harmful. ";
             }
 
             return s;
+        }
+
+        public int CalculateCelsius(int temperature)
+        {
+            if (TemperatureType == "Celsius (C)")
+            {
+                return (int)((temperature - 32) / 1.8);
+            }
+            return temperature;
         }
     }
 }

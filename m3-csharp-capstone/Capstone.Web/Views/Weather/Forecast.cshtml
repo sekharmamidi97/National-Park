@@ -4,19 +4,25 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Weather Forecast</h2>
 <section>
+    @using (Html.BeginForm("TemperatureConversion", "Weather", FormMethod.Post))
+    {
+        <p>Fahrenheit @Html.RadioButton("Session_Temperature", "Fahrenheit (F)")</p>
+        <p>Celsius @Html.RadioButton("Session_Temperature", "Celsius (C)")</p>
+        <button>Submit</button>
+    }
+
     @foreach (var weather in Model)
     {
-        <h1>@weather.parkName[weather.ParkCode]</h1>
+        <h1>@weather.parkName[weather.ParkCode] Weather Forecast</h1>
         <h1>Today</h1>
-        <div>
-            <img src=@("/Content/" + weather.Forecast + ".png") />
-            <p>@weather.outlook[weather.Forecast]</p>
-            <p>High @weather.High &#8457 / Low @weather.Low &#8457</p>
-            <p>@weather.WeatherGear()</p>
-
-        </div>
-
+            <div>
+                <img src=@("/Content/" + weather.Forecast + ".png") />
+                <p>@weather.outlook[weather.Forecast]</p>
+                <p>High @weather.CalculateCelsius(weather.High) &#8457 / Low @weather.CalculateCelsius(weather.Low) &#8457</p>
+                <p>@weather.WeatherGear()</p>
+            </div>
     }
+
+
 </section>

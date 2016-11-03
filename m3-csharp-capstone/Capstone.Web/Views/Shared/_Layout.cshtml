@@ -13,18 +13,15 @@
 </head>
 <body>
 <div id="background"><img src="/Content/gcnp.jpg"/></div>
-    <header>
-        <img src="/Content/logo.png"/>
-    </header>
     <nav>
         <ul>
             <li>@Html.ActionLink("Home", "Home")</li>
-            <li>@Html.ActionLink("Survey", "NewSurveyPost")</li> 
+            <li>@Html.ActionLink("Survey", "NewSurveyPost")</li>
         </ul>
     </nav>
-
+    <header>
+        <img src="/Content/logo.png"/>
+    </header>
         @RenderBody()
-    
-    
 </body>
 </html>

@@ -20,24 +20,28 @@ namespace Capstone.Web.DAL
 
         public List<SurveyModel> GetAllSurveys()
         {
+            SurveyModel model = new SurveyModel();
+
             List<SurveyModel> output = new List<SurveyModel>();
-                try
+            try
             {
                 using (SqlConnection conn = new SqlConnection(ConnectionString))
                 {
                     conn.Open();
 
-                    SqlCommand cmd = new SqlCommand("Select * From survey_result GROUP BY parkCode ORDER BY parkCode ", conn);
+                    SqlCommand cmd = new SqlCommand("Select parkCode, COUNT (parkCode) AS 'Number of Votes' From survey_result GROUP BY parkCode ORDER BY parkCode ", conn);
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())
                     {
                         output.Add(new SurveyModel()
                         {
+                            NumberOfVotes = Convert.ToInt32(reader["Number of Votes"]),
                             ParkCode = Convert.ToString(reader["parkCode"]),
-                            EmailAddress = Convert.ToString(reader["emailAddress"]),
-                            StateOfResidence = Convert.ToString(reader["state"]),
-                            PhysicalActivityLevel = Convert.ToString(reader["activityLevel"]),
+                            //EmailAddress = Convert.ToString(reader["emailAddress"]),
+                            //StateOfResidence = Convert.ToString(reader["state"]),
+                            //PhysicalActivityLevel = Convert.ToString(reader["activityLevel"]),
+
                         });
                     }
 

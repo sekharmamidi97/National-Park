@@ -4,15 +4,21 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Survey Results</h2>
+<section>
+    <h2>Survey Results</h2>
 
-@foreach(var survey in Model)
-{
-<table>
-    <tr>
-        <td>
-            
-        </td>
-    </tr>
-</table>
-}
+    @foreach (var survey in Model)
+    {
+        <table>
+            <tr>
+                <td>
+                    @survey.parkName[survey.ParkCode]
+                </td>
+                <td>
+                    @survey.NumberOfVotes
+                </td>
+            </tr>
+        </table>
+
+    }
+</section>
