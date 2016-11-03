@@ -4,10 +4,12 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>NewSurveyPost</h2>
+<section>
 
-@using (Html.BeginForm("DisplaySurvey", "Survey", FormMethod.Post))
-{
+    <h2>NewSurveyPost</h2>
+
+    @using (Html.BeginForm("DisplaySurvey", "Survey", FormMethod.Post))
+    {
     <div>
         @Html.Label("parkCode", "Please select your favorite park: ")
         @Html.DropDownListFor(s => s.ParkCode, (IEnumerable<SelectListItem>)ViewBag.ParkName)
@@ -24,8 +26,9 @@
         @Html.Label("physicalActivityLevel", "Please select your level of activity: ")<br />
         @Html.RadioButtonFor(pa => pa.PhysicalActivityLevel, "Inactive") Inactive <br />
         @Html.RadioButtonFor(pa => pa.PhysicalActivityLevel, "Sedentary") Sedentary<br />
-        @Html.RadioButtonFor(pa => pa.PhysicalActivityLevel, "Active") Active <br/>
-        @Html.RadioButtonFor(pa => pa.PhysicalActivityLevel, "Extremely Active") Extremely Active<br/>
+        @Html.RadioButtonFor(pa => pa.PhysicalActivityLevel, "Active") Active <br />
+        @Html.RadioButtonFor(pa => pa.PhysicalActivityLevel, "Extremely Active") Extremely Active<br />
     </div>
-}
+    }
 
+</section>

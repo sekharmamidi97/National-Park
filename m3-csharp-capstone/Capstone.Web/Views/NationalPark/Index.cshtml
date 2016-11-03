@@ -1,16 +1,38 @@
 ﻿@model List<Capstone.Web.Models.NationalParkModel>
-@{
+    @{
+    int i = 1;
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-}
+    }
 
-@foreach (var park in Model)
-{
-    <p>@park.ParkName</p>
-    <p>@park.State</p>
-    <a href=@Url.Action("Detail", "NationalPark", new { parkCode = park.ParkCode})>
-        <img src=@("/Content/" + park.ParkCode + ".jpg") /></a>
-    <p>@park.Description</p>
-}
+    @foreach (var park in Model)
+    {
+    if(i % 2 == 0)
+    {
+
+    <section class="left-content">
+        <div>
+            <h1 class="left">@park.ParkName, @park.State</h1>
+            <a class="left" href=@Url.Action("Detail", "NationalPark" , new { parkCode=park.ParkCode})>
+                <img class="picture left" src=@("/Content/" + park.ParkCode + ".jpg" ) />
+            </a>
+        </div>
+        <p class="left-summary">@park.Description</p>
+    </section>
+    }
+    else
+    {
+    <section class="right-content">
+        <p class="right-summary">@park.Description</p>
+        <div>
+            <h1 class="right">@park.ParkName, @park.State</h1>
+            <a class="right" href=@Url.Action("Detail", "NationalPark" , new { parkCode=park.ParkCode})>
+                <img class="picture right" src=@("/Content/" + park.ParkCode + ".jpg" ) />
+            </a>
+        </div>
+    </section>
+    }
+    i++;
+    }
 
 
