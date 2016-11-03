@@ -69,5 +69,40 @@ namespace Capstone.Web.Models
             }
         };
 
+        public string WeatherGear()
+        {
+            string s = "";
+
+            if(Forecast == "snow")
+            {
+                s = s + "Pack snow shoes. ";
+            }
+            if(Forecast == "rain")
+            {
+                s = s + "Pack rain gear, with waterproof shoes. ";
+            }
+            if(Forecast == "thunderstorms")
+            {
+                s = s + "Seek shelter, don't hike on exposed ridges. ";
+            }
+            if(Forecast == "sunny")
+            {
+                s = s + "Pack sun block. ";
+            }
+            if(High > 75)
+            {
+                s = s + "Bring an extra gallon of water. ";
+            }
+            if(High - Low > 20)
+            {
+                s = s + "Wear breathable layers. ";
+            }
+            if(Low < 20)
+            {
+                s = s + "Being exposed to frigid temperatures can be harmful. ";
+            }
+
+            return s;
+        }
     }
 }

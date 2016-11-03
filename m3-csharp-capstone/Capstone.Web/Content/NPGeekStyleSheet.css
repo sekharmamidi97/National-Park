@@ -25,6 +25,7 @@ header{
     border-width: 3px;
     border-radius: 10px;
     margin-left: 5%;
+    z-index: 4;
 }
 
 nav{
@@ -35,6 +36,7 @@ nav{
     border: solid;
     border-width: 3px;
     border-radius: 10px;
+    z-index: 3;
 }
 
 nav li{

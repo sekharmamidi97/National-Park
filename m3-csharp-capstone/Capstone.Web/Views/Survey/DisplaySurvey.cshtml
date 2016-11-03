@@ -1,8 +1,18 @@
-﻿@model Capstone.Web.Models.SurveyModel
+﻿@model List<Capstone.Web.Models.SurveyModel>
 @{
     ViewBag.Title = "DisplaySurvey";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>DisplaySurvey</h2>
+<h2>Survey Results</h2>
 
+@foreach(var survey in Model)
+{
+<table>
+    <tr>
+        <td>
+            
+        </td>
+    </tr>
+</table>
+}

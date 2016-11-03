@@ -19,7 +19,7 @@ namespace Capstone.Web.Controllers
         // GET: Survey
         public ActionResult DisplaySurvey()
         {
-
+            List<SurveyModel> model = surveyDAL.GetAllSurveys();
             return View("DisplaySurvey", new SurveyModel());
         }
         public ActionResult NewSurveyPost()

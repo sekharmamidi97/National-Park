@@ -27,7 +27,7 @@ namespace Capstone.Web.DAL
                 {
                     conn.Open();
 
-                    SqlCommand cmd = new SqlCommand("Select * From survey_result", conn);
+                    SqlCommand cmd = new SqlCommand("Select * From survey_result GROUP BY parkCode ORDER BY parkCode ", conn);
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())
