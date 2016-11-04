@@ -14,11 +14,15 @@ namespace Capstone.Web.Tests.Controllers
         [TestMethod]
         public void ParkDetail_WhenCorrectParkCode_ExpectDetailInfo()
         {
+            //New park
+            NationalParkModel parkModel = new NationalParkModel();
+            parkModel.ParkCode = "RMNP";
+
             //Mock the dal
             Mock<IParkDAL> mockDAL = new Mock<IParkDAL>();
 
             //Set up the mock object
-            mockDAL.Setup(p => p.GetPark("RMNP")).Returns(new NationalParkModel());
+            mockDAL.Setup(p => p.GetPark("RMNP")).Returns(parkModel);
 
             //Create the controller
             NationalParkController controller = new NationalParkController(mockDAL.Object);

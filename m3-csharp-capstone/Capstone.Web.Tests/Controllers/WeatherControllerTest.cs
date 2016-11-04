@@ -6,6 +6,8 @@ using Capstone.Web.Models;
 using System.Collections.Generic;
 using Capstone.Web.Controllers;
 using System.Web.Mvc;
+using System.Web;
+using System.Web.Routing;
 
 namespace Capstone.Web.Tests.Controllers
 {
@@ -22,6 +24,15 @@ namespace Capstone.Web.Tests.Controllers
                 new ParkWeatherModel {ParkCode = "RMNP", Day = 6, Forecast = "Cloudy", High = 80, Low = 65, TemperatureType = "Celsius(C)" }
             };
 
+            //Mock Session Object
+            Mock<HttpSessionStateBase> mockSession = new Mock<HttpSessionStateBase>();
+
+            //Mock Http Context Request for Controller
+            Mock<HttpContextBase> mockContext = new Mock<HttpContextBase>();
+
+            //When the Controller calls this.Session, it will get a mock session
+            mockContext.Setup(s => s.Session).Returns(mockSession.Object);
+
             //Mock the dal
             Mock<IWeatherDAL> mockDAL = new Mock<IWeatherDAL>();
 
@@ -31,6 +42,9 @@ namespace Capstone.Web.Tests.Controllers
             //Create the controller
             WeatherController controller = new WeatherController(mockDAL.Object);
 
+            //Assign the context property on the controller to our mock context which uses our mock session
+            controller.ControllerContext = new ControllerContext(mockContext.Object, new RouteData(), controller);
+            
             //Act
             var result = controller.Forecast("RMNP");
 
