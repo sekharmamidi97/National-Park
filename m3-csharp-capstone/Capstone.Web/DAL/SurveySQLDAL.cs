@@ -64,10 +64,10 @@ namespace Capstone.Web.DAL
                     conn.Open();
 
                     SqlCommand cmd = new SqlCommand("Insert into survey_result Values (@parkCode, @emailAddress, @state, @activityLevel);", conn);
-                    cmd.Parameters.AddWithValue("@parkCode,", newSurvey.ParkCode);
-                    cmd.Parameters.AddWithValue("@emailAddress,", newSurvey.EmailAddress);
-                    cmd.Parameters.AddWithValue("@state,", newSurvey.StateOfResidence);
-                    cmd.Parameters.AddWithValue("@activityLevel,", newSurvey.PhysicalActivityLevel);
+                    cmd.Parameters.AddWithValue("@parkCode", newSurvey.ParkCode);
+                    cmd.Parameters.AddWithValue("@emailAddress", newSurvey.EmailAddress);
+                    cmd.Parameters.AddWithValue("@state", newSurvey.StateOfResidence);
+                    cmd.Parameters.AddWithValue("@activityLevel", newSurvey.PhysicalActivityLevel);
 
                     int rowsAffected = cmd.ExecuteNonQuery();
 

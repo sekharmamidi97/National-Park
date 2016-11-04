@@ -8,6 +8,7 @@ namespace Capstone.Web.Models
 {
     public class SurveyModel
     {
+        [Required (ErrorMessage = "You must select a park name")]
         public string ParkCode { get; set; }
 
         [Required (ErrorMessage = "Email address is required")]
