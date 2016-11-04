@@ -5,11 +5,18 @@
 }
 
 <section>
-    <h2>Survey Results</h2>
-
-    @foreach (var survey in Model)
-    {
-        <table>
+    <h2 id="result_heading">Survey Results</h2>
+    <table id="survey_table">
+        <tr>
+            <th>
+                Park
+            </th>
+            <th>
+                Votes
+            </th>
+        </tr>
+        @foreach (var survey in Model)
+        {
             <tr>
                 <td>
                     @survey.parkName[survey.ParkCode]
@@ -18,7 +25,6 @@
                     @survey.NumberOfVotes
                 </td>
             </tr>
-        </table>
-
-    }
+        }
+    </table>
 </section>

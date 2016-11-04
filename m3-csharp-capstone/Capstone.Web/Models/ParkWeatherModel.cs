@@ -18,9 +18,9 @@ namespace Capstone.Web.Models
         {
             if(TemperatureType == "Celsius (C)")
             {
-                return "C";
+                return (char)176 + "C";
             }
-            return "F";
+            return (char)176 + "F";
         }
 
         public Dictionary<string, string> outlook = new Dictionary<string, string>()

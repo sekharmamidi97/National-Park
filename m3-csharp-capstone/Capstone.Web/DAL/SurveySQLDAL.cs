@@ -29,14 +29,14 @@ namespace Capstone.Web.DAL
                 {
                     conn.Open();
 
-                    SqlCommand cmd = new SqlCommand("Select parkCode, COUNT (parkCode) AS 'Number of Votes' From survey_result GROUP BY parkCode ORDER BY parkCode ", conn);
+                    SqlCommand cmd = new SqlCommand("Select parkCode, COUNT (parkCode) AS 'NumberofVotes' From survey_result GROUP BY parkCode ORDER BY NumberofVotes DESC", conn);
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())
                     {
                         output.Add(new SurveyModel()
                         {
-                            NumberOfVotes = Convert.ToInt32(reader["Number of Votes"]),
+                            NumberOfVotes = Convert.ToInt32(reader["NumberofVotes"]),
                             ParkCode = Convert.ToString(reader["parkCode"]),
                             //EmailAddress = Convert.ToString(reader["emailAddress"]),
                             //StateOfResidence = Convert.ToString(reader["state"]),

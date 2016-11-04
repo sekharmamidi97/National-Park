@@ -123,6 +123,10 @@ section{
     box-shadow: 1em 1em 0.5em #888888;
 }
 
+.right-content .picture:hover{
+    box-shadow: 1em 1em 0.5em #A0FFA0;
+}
+
 .left-content .picture{
     width: 75%;
     opacity: 1;
@@ -130,9 +134,13 @@ section{
     box-shadow: -1em 1em 0.5em #888888;
 }
 
+.left-content .picture:hover{
+    box-shadow: -1em 1em 0.5em #A0FFA0;
+}
+
 /*Detail Styling*/
 #detail_heading{
-   text-shadow: -0.25em 0.25em 3px darkgreen;
+   text-shadow: -0.25em 0.25em 4px darkgreen;
    margin-bottom: 0.25em;
    margin-left: 1em;
 }
@@ -153,7 +161,6 @@ section{
 
 #detail_info{
     margin: 1em;
-    margin-top: 0;
     width: 45%;
     display: inline-block;
     vertical-align: top;
@@ -196,6 +203,8 @@ section{
     margin-right: 2em;
     margin-top: 0;
     padding-bottom: 1em;
+    font-weight: bold;
+
 } 
 
 /*Forecast Styling*/
@@ -211,8 +220,8 @@ section{
 
 .day{
     display: inline-block;
-    width: 15%;
-    margin: 2.3%;
+    width: 16.5%;
+    margin: 1.55%;
     vertical-align: top;
     text-align: center;
     
@@ -233,4 +242,62 @@ section{
 .temp{
     font-weight: bold;
     color: blue;
+}
+
+.conversion{
+    display: inline-block;
+}
+
+.conversion:first-child{
+    font-weight: bold;
+    margin-left: 1em;
+}
+
+/*Taking Survey Styling*/
+#input_header:hover{
+    text-shadow: 20em -5em 0 black;
+}
+
+.survey_input{
+    font-weight: bold;
+}
+
+#all_inputs{
+    margin: 1em;
+    line-height: 1.5em;
+    display: inline-block;
+}
+
+#backpack{
+    float: right;
+    max-height: 15em;
+    margin: 2.5em;
+}
+
+.red{
+    color: red;
+    display: inline-block;
+}
+
+/*Survey Results Styling*/
+#result_heading{
+    margin-top: 1em;
+    margin-left: 5%;
+}
+
+#survey_table{
+    width: 90%;
+    margin: 5%;
+    margin-top: 0;
+    border-collapse: collapse;
+    font-size: 1.25em;
+}
+
+th{
+    text-align: left;
+    border-bottom: solid;
+}
+
+#survey_table tr:nth-child(even){
+    background-color:gainsboro;
 }

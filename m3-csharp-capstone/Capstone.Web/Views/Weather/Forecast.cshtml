@@ -5,11 +5,11 @@
 }
 
 <section>
-    @using (Html.BeginForm("TemperatureConversion", "Weather",  FormMethod.Post))
+    @using (Html.BeginForm("TemperatureConversion", "Weather", FormMethod.Post))
     {
-        
-        <p>Fahrenheit @Html.RadioButton("temp", "Fahrenheit (F)")</p>
-        <p>Celsius @Html.RadioButton("temp", "Celsius (C)")</p>
+        <p class="conversion">Please select temperature preference: </p>
+        <p class="conversion">Fahrenheit @Html.RadioButton("temp", "Fahrenheit (F)")</p>
+        <p class="conversion">Celsius @Html.RadioButton("temp", "Celsius (C)")</p>
         <input type="hidden" name="parkCode" value="@Model[0].ParkCode"/>
         <button>Submit</button>
     }

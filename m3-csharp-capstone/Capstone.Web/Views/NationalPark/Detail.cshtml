@@ -8,7 +8,7 @@
 
     <h1 id="detail_heading">@Model.ParkName, @Model.State</h1>
     <div id="weather_link">
-        @Html.ActionLink("Get 5 Day Forecast", "Forecast", "Weather", new { parkCode = Model.ParkCode }, null)
+        @Html.ActionLink("5 Day Forecast", "Forecast", "Weather", new { parkCode = Model.ParkCode }, null)
     </div>
     <p id="italic">est. @Model.YearFounded</p>
     <img id="detail_pic" src=@("/Content/" + Model.ParkCode + ".jpg") />
@@ -41,7 +41,7 @@
                 <td>@Model.Climate</td>
             </tr>
             <tr>
-                <td>Annual Vistor Count:</td>
+                <td>Annual Visitor Count:</td>
                 <td>@Model.AnnualVisitorCount</td>
             </tr>
             <tr>
