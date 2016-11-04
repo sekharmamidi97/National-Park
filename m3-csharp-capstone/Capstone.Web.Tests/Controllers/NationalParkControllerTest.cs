@@ -24,7 +24,7 @@ namespace Capstone.Web.Tests.Controllers
             NationalParkController controller = new NationalParkController(mockDAL.Object);
 
             //Act
-            var result = controller.Detail("GTNP");
+            var result = controller.Detail("RMNP");
 
             //Assert
             Assert.IsTrue(result is ViewResult);

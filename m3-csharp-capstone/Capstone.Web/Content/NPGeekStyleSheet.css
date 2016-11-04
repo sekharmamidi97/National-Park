@@ -28,6 +28,7 @@ header{
     margin-left: 5%;
     z-index: 4;
     opacity: 0.95;
+    margin-bottom: 0.5em;
     
 }
 
@@ -83,13 +84,12 @@ section{
     margin-bottom: 20px;
 }
 
+/*Index Styling*/
 .right-content div{
     margin-left: 1em;
     display: inline-block;
     width: 35%;
-    vertical-align: top;
-    
-    
+    vertical-align: top;  
 }
 
 .right-summary{
@@ -128,4 +128,109 @@ section{
     opacity: 1;
     margin-bottom: 3em;
     box-shadow: -1em 1em 0.5em #888888;
+}
+
+/*Detail Styling*/
+#detail_heading{
+   text-shadow: -0.25em 0.25em 3px darkgreen;
+   margin-bottom: 0.25em;
+   margin-left: 1em;
+}
+
+#italic{
+    font-style: italic;
+    font-size: 1.25em;
+    color: gray;
+    margin: 0;
+    margin-left: 1em;
+}
+
+#detail_pic{
+    margin: 1em;
+    width: 45%;
+    display: inline-block;
+}
+
+#detail_info{
+    margin: 1em;
+    margin-top: 0;
+    width: 45%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#detail_table{
+    width: 75%;
+}
+
+#detail_table tr td:first-child{
+    font-weight: bold;
+}
+
+#weather_link{
+    float: right;
+    margin-right: 3em;
+    font-size: 1.25em;
+}
+
+#full_quote{
+    width: 90%;
+    height: auto;
+    margin-left: 3.5%;
+    margin-right: 5%;
+    background-color: lightblue;
+    opacity: 1;
+    box-shadow: 0.75em 0.75em 0 gainsboro;
+    font-style: italic;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.25em;
+}
+
+#quote{
+    margin-bottom: 0;
+}
+
+#quoter{
+    text-align: right;
+    margin-right: 2em;
+    margin-top: 0;
+    padding-bottom: 1em;
+} 
+
+/*Forecast Styling*/
+#weather_heading{
+    text-align: center;
+}
+
+#today{
+    margin-left: 7%;
+    margin-bottom: 0;
+
+}
+
+.day{
+    display: inline-block;
+    width: 15%;
+    margin: 2.3%;
+    vertical-align: top;
+    text-align: center;
+    
+}
+
+.weather_pic{
+    width: 100%;
+}
+
+.weather_gear{
+    max-width: 100%;
+}
+
+.day:nth-child(even){
+    background-color: gainsboro;
+}
+
+.temp{
+    font-weight: bold;
+    color: blue;
 }
